@@ -55,8 +55,8 @@ clean = clean.map do |cl|
 end
 
 p clean[0]
-
-def check(arr)
+# so i dont have to repeat this mess
+def check(cl)
   x = 0
   case cl[0]
   when "byr"
@@ -72,10 +72,35 @@ def check(arr)
       p ok
     end
   when "hgt"
+    if cl[1] == /cm/
+    elsif cl[1] != /in/
+    else
+      p "not ok"
+    end
   when "hcl"
+    if cl[0][0] != "#"
+      p "not ok"
+    elsif cl[0].length != 6
+      # more checks
+    end
   when "ecl"
+    if cl[1].length > 3
+      p "not ok"
+    end
+    case cl[1]
+    when "amb"
+    when "blu"
+    when "brn"
+    when "gry"
+    when "hzl"
+    when "oth"
+    else
+      p "not ok"
+    end
   when "pid"
-  when "cid"
+    if cl[1].length != 9
+      p "not ok"
+    end
   end
 end
 
@@ -85,9 +110,14 @@ clean.each do |cl|
     next
   else
     x = 0
-
+    cl.each do |c|
+      if c.match(/cid:/)
+        x += 1
+      end
+    end
     if x == 0 && cl.length == 7
-      count += 1
+      check(cl)
     end
   end # if
 end
+p count
