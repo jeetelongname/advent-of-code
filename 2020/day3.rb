@@ -1,19 +1,15 @@
 #!/usr/bin/env ruby
 
 # cleaned
-lines = IO.readlines("input/day3-input")
-lines.each_with_index do |line, i|
-  lines[i] = line.sub(/\n$/, "")
-end
+lines = IO.readlines("input/day3-input").map { |x| x.sub(/\n$/, "") }
 
 ## part 1
 x = 0
 tree = 0 # 420 my dude
 lines.each do |line|
   char = line[x % line.length]
-  if char == "#"
-    tree += 1
-  end
+  tree += 1 if char == "#"
+
   x += 3
 end
 p tree
@@ -27,17 +23,15 @@ slopes.each do |slope|
   y = 0
   while y != lines.length
     char = lines[y][x % lines[y].length]
-    if char == "#"
-      tree += 1
-    end
+    tree += 1 if char == "#"
+
     x += slope[0]
     y += slope[1]
-    if y == lines.length + 1
-      break
-    end
+    break if y == lines.length + 1
   end
   collisions.append(tree)
 end
+
 finalie = 1
 collisions.each do |i|
   finalie = i * finalie
