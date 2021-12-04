@@ -7,7 +7,6 @@
                        (cons inst (string->number move))))
                    (file->lines "inputs/day2.txt")))
 
-
 (let* ([i (for/fold ([sum (cons 0 0)])
                     ([move input])
             (match (car move)
