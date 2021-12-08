@@ -15,7 +15,7 @@ lines = IO.readlines("input/day1-input")
 lines.each do |i|
   # and then for all of the indexs in the array..
   # we loop again!
-  lines.each do |j| 
+  lines.each do |j|
     # now we do the adding
     x = i.to_i + j.to_i
     if x == 2020
@@ -31,18 +31,16 @@ end
 lines.each do |i|
   lines.each do |j|
     lines.each do |k|
-      if i.to_i + j.to_i + k.to_i == 2020
-        p i.to_i * j.to_i * k.to_i
-      end
+      p i.to_i * j.to_i * k.to_i if i.to_i + j.to_i + k.to_i == 2020
     end
   end
 end
 # I think its a big O of.. well lets calculate it!
-=begin
-it takes array.len times to loop through one array
-we loop through an array for every number in array
-so for this probem it would be it would be N^3 ?
-=end
+# begin
+# it takes array.len times to loop through one array
+# we loop through an array for every number in array
+# so for this probem it would be it would be N^3 ?
+# end
 
 # now can we do it for n?
 # probably but

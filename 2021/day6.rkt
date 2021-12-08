@@ -6,8 +6,7 @@
 (define (fish-buisness fish-timers)
   (let ([zeros (length (filter zero? fish-timers))])
     (map (lambda (x) (- x 1))
-         (append (map (lambda (x)
-                        (if (zero? x) 7 x)) fish-timers) (make-list zeros 9)))))
+         (append (map (λ (x) (if (zero? x) 7 x)) fish-timers) (make-list zeros 9)))))
 
 (length  (for/fold ([sum input])
                    ([_ 80])
@@ -22,7 +21,7 @@
               ([_ duration])
       (let* ([zero (car sum)]
              [shift (append (cdr sum) (list (car sum)))])
-        (list-update shift 6 (lambda (x) (+ x zero)))))))
+        (list-update shift 6 (λ (x) (+ x zero)))))))
 
 (apply + (fish-buisness-formula input 256))
 ;; sort list
