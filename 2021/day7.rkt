@@ -1,6 +1,7 @@
 #lang racket
 
 (require threading)
+
 (define input (~> (file->string "inputs/day7.txt")
                   (string-trim "\n")
                   (string-split ",")
@@ -9,6 +10,7 @@
 (define (sum-cool subbr f lst)
   (apply + (map (λ (x)
                   (f x subbr)) lst)))
+
 (define (median lst)
   (list-ref (sort lst <)
             (round (/ (length lst) 2))))
@@ -18,7 +20,6 @@
                                    (abs (- x subr)))
                                  input))
 ;; part 2
-
 (define (mean lst)
   (/ (apply + lst) (length lst)))
 
