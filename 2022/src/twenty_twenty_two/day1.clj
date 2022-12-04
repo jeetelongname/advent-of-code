@@ -27,8 +27,8 @@
   (apply +
          (take 3
                (reverse (sort
-                         (map (partial apply +)
-                              (parse-file (slurp "input/day1.txt")))))))
+                         (map (partial apply +))
+                         (parse-file (slurp "input/day1.txt"))))))
 
   ;; optimised solution
   (->> (slurp "input/day1.txt")
