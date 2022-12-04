@@ -2,7 +2,9 @@
 
 These are my submissions.
 
-2020 was in ruby
-2021 is in racket
+- 2020 was in ruby
+- 2021 was in racket
+- 2022 is in clojure
 
-hopefully I get past day ~~7~~ *4* this time!
+
+hopefully I get past day 9 this time!
