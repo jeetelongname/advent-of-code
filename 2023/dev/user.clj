@@ -4,5 +4,5 @@
 (comment
   (clerk/serve! {:browse? true
                  :watch-paths ["notebooks"]})
-  (clerk/show! "notebooks/day2.clj")
+  (clerk/show! "notebooks/day3.clj")
   (clerk/build! {:paths ["notebooks/*"]}))
