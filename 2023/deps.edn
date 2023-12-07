@@ -1,4 +1,4 @@
 {:paths ["dev" "notebooks" "input"]
  :deps
- {io.github.nextjournal/clerk {:git/sha "7567ebd7bcb297952cc962d7e3b805e800ee8304"}
+ {io.github.nextjournal/clerk {:git/sha "ff2bf8b0b5d596286fb1d22408b14456fee2dbf7"}
   org.clojure/clojure {:mvn/version "1.11.1"}}}
